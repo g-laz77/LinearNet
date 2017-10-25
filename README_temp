@@ -1,0 +1,11 @@
+Important links:
+	- http://statmt.org/wmt14/translation-task.html (For English monolingual data)
+	- http://www.cfilt.iitb.ac.in/~moses/iitb_en_hi_parallel/iitb_corpus_download/ (for Hindi-English parallel corpora and Hindi monolingual corpora)
+
+	- https://code.google.com/archive/p/berkeleyaligner/downloads (For Berkeley Aligner)
+	- https://radimrehurek.com/gensim/models/word2vec.html (word2vec gensim)
+Important points to note:
+	- file --mime IITB.en-hi.hi (To check charset encoding in bash)
+	  Output: IITB.en-hi.hi: text/plain; charset=utf-8
+	- Currently trained the word embedding models for the extracted parallel corpora only.
+	- Will need to train the dataset on a larger monolingual corpus, will take hours, use compute machine,
