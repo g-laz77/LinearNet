@@ -16,7 +16,7 @@ class LoadFile(object):
             yield line.split()
 
 
-sentences = LoadFile(sys.argv[1])
+sentences = LoadFile(fname)
 model = gensim.models.Word2Vec(sentences, min_count = 4, size = 300)
 
 model.save('./models/en')
