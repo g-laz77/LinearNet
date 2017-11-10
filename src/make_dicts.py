@@ -10,27 +10,17 @@ p = os.popen(cmd, "r")
 line = p.readline()
 line = ''.join(list(line)[2:-1])
 no_lines = int(line)
-<<<<<<< HEAD
 # print no_lines, type(no_lines)
 final_dict = {}
 
 line_number = 0
-=======
-print no_lines, type(no_lines)
-final_dict = {}
-
-line_number = 0
-print 'hll'
->>>>>>> cdea5f9ddecc331f9e22369a4757867457305166
 words = []
 s = 0
 with open(input_file,'r') as f:
-    for line in f:
-<<<<<<< HEAD
-        # print line  #, line_number
-=======
+    for line in f:       # print line  #, line_number
+
         print line  #, line_number
->>>>>>> cdea5f9ddecc331f9e22369a4757867457305166
+
         if line_number%3 == 0:
             s += 1
             if s is 2:
@@ -41,7 +31,6 @@ with open(input_file,'r') as f:
         else:
             # print words
             hindi_words = line.split()
-<<<<<<< HEAD
             list_of_words = list()
             for word in hindi_words:
                 if word == "({" or word == "})" or word in ["1","2","3","4","5","6","7","8","9","0"]:
@@ -81,9 +70,3 @@ with open(input_file,'r') as f:
 
         line_number += 1
 print final_dict
-=======
-            # lists1 = re.findall(ur'^\(.*',line)
-            lists = re.findall(r'(\(\{(\s*[0-9]*\s*)*\}\))',line)
-            print lists
-        line_number += 1
->>>>>>> cdea5f9ddecc331f9e22369a4757867457305166
