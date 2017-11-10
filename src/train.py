@@ -20,5 +20,3 @@ sentences = LoadFile(fname)
 model = gensim.models.Word2Vec(sentences, min_count = 4, size = 300)
 
 model.save('./models/en')
-
-
