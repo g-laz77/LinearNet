@@ -19,25 +19,29 @@ s = 0
 with open(input_file,'r') as f:
     for line in f:       # print line  #, line_number
 
-        print line  #, line_number
+        # print line  #, line_number
 
         if line_number%3 == 0:
             s += 1
-            if s is 2:
-                break
+        #    if s is 2:
+         #       break
         elif line_number%3 == 1:
             words = line.split()
+            print '======= NEW SENTENCE ======='
+            print line
             print words
         else:
             # print words
+            print line
             hindi_words = line.split()
             list_of_words = list()
             for word in hindi_words:
-                if word == "({" or word == "})" or word in ["1","2","3","4","5","6","7","8","9","0"]:
+                if word == "({" or word == "})" or word.isdigit():
                     continue
                 else:
                     list_of_words.append(word)
             
+            print list_of_words
             lists = re.findall(r'(\(\{(\s*[0-9]*\s*)*\}\))',line)
 
             for i in range(len(lists)):
@@ -46,8 +50,9 @@ with open(input_file,'r') as f:
             del(lists[0])
             del(list_of_words[0])
             for i in range(len(list_of_words)):
+                print 'NEW MAPPING'
                 hindi_word = list_of_words[i]
-                print hindi_word
+                print 'hindi_word->', hindi_word
                 mapping = lists[i].split()
                 if len(mapping) == 2:
                     continue
