@@ -27,24 +27,25 @@ for i in range(0, no_of_files):
             # print line  #, line_number
 
             if line_number % 3 == 0:
-                with open('output.p', 'wb') as f:
-                    pickle.dump(final_dict, f)
+                pass
+                # with open('output.p', 'wb') as f:
+                #     pickle.dump(final_dict, f)
                     # s += 1
                     # if s is 2:
                     # break
             elif line_number % 3 == 1:
                 words = line.split()
-                # print '======= NEW SENTENCE ======='
-                # print line
-                # print words
+                print '======= NEW SENTENCE ======='
+                print line
+                print words
             else:
                 # print words
-                # print line
+                print line
                 flag = 0
                 to_delete = []
                 hindi_words = line.split()
                 list_of_words = list()
-                # print hindi_words
+                print 'yo boy - ', hindi_words
                 for word in range(len(hindi_words)):
                     # print word, flag, hindi_words[word]
                     if hindi_words[word] == "({":
@@ -64,7 +65,7 @@ for i in range(0, no_of_files):
                 for i in to_delete:
                     del (hindi_words[i])
                 list_of_words = hindi_words
-                # print list_of_words
+                print list_of_words
                 lists = re.findall(r'(\(\{(\s*[0-9]*\s*)*\}\))', line)
 
                 for i in range(len(lists)):
@@ -73,9 +74,9 @@ for i in range(0, no_of_files):
                 del (lists[0])
                 del (list_of_words[0])
                 for i in range(len(list_of_words)):
-                    # print 'NEW MAPPING'
+                    print 'NEW MAPPING'
                     hindi_word = list_of_words[i]
-                    # print 'hindi_word->', hindi_word
+                    print 'hindi_word->', hindi_word
                     mapping = lists[i].split()
                     if len(mapping) == 2:
                         continue
@@ -90,12 +91,12 @@ for i in range(0, no_of_files):
                             eng_words += (words[int(index) - 1])
                             if ind != len(mapping) - 1:
                                 eng_words = eng_words + '_'
-                        # print eng_words
+                        print eng_words
                         if hindi_word not in final_dict.keys():
                             final_dict[hindi_word] = eng_words
 
             line_number += 1
     # print final_dict
-with open('output.p', 'wb') as f:
+with open('output_sys2.p', 'wb') as f:
     pickle.dump(final_dict, f)
 f.close()
