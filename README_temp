@@ -4,6 +4,7 @@ Important links:
 
 	- https://code.google.com/archive/p/berkeleyaligner/downloads (For Berkeley Aligner)
 	- https://radimrehurek.com/gensim/models/word2vec.html (word2vec gensim)
+	- https://fabioticconi.wordpress.com/2011/01/17/how-to-do-a-word-alignment-with-giza-or-mgiza-from-parallel-corpus/ (for Mgiza alignment)
 Important points to note:
 	- file --mime IITB.en-hi.hi (To check charset encoding in bash)
 	  Output: IITB.en-hi.hi: text/plain; charset=utf-8
